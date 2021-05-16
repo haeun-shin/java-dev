@@ -25,7 +25,11 @@ public class BankTransactionAnalyzer {
 		final BankStatementProcessor bankStatementProcessor = new BankStatementProcessor(bankTransactions);
 		
 		// 3-7. 특정 BankTransactionFilter 구현으로 findTransactions() 호출
-		final List<BankTransaction> transactions = bankStatementProcessor.findTransactions(new BankTransactionIsInFebruaryAndExpensive());
+//		final List<BankTransaction> transactions = bankStatementProcessor.findTransactions(new BankTransactionIsInFebruaryAndExpensive());
+		
+		// 3-8. 람다 표현식으로 BankTransactionFilter 구현하기
+		final List<BankTransaction> transactions = bankStatementProcessor.findTransactions(bankTransaction -> 
+				bankTransaction.getDate().getMonth() == Month.FEBRUARY && bankTransaction.getAmount() >= 1_000);
 	}
 }
 

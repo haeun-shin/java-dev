@@ -9,8 +9,6 @@ import main.java.com.iteratrlearning.chapter02.BankTransaction;
 public class BankStatementProcessor {
 	private final List<BankTransaction> bankTransactions;
 	
-	public void BankStatementProcessor() {};
-	
 	public BankStatementProcessor(final List<BankTransaction> bankTransactions) {
 		this.bankTransactions = bankTransactions;
 	}
